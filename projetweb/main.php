@@ -1,18 +1,18 @@
 <?php 
-    session_start()
+    session_start();
 
     function anti_hack($var){
         $var = htmlspecialchars($var);
-        $var = striplashes($var);
+        $var = stripslashes($var);
         $var = trim($var);
         $var = htmlentities($var);
-        return $var
+        return $var;
     }
 
     if(!empty($_POST['person_name']) && !empty($_POST['person_age'])){
         $_SESSION['person_name'] = anti_hack($_POST['person_name']);
         $_SESSION['person_age'] = anti_hack($_POST['person_age']);
-        header ('location: inscription_succee.php')
+        header ('location: inscription_succee.php');
     }
 ?>
 <!doctype html>
@@ -45,7 +45,7 @@
         var regexPrenom = /^[A-Za-zéèàâäîï][a-zéèàâäîï]+([- ][A-Za-zéèàâäîï][a-zéèàâäîï]+)?$/;
         var regexAge = /^(1[8-9]|[2-7]{1}[0-9]{1}|80)$/;
 
-        fucntion validationForm(event){
+        function validationForm(event){
 
             fieldsEmpty = "";
 
@@ -68,7 +68,7 @@
                 fieldsError = "";
 
                 if(regexPrenom.test(prenom.value) == false){
-                    fieldsError += "\n - prenom";
+                    fieldsError += "\n - Prenom";
                     prenom.style.backgroundColor='#DF3F3F';
                     prenom.value = "";
                 }
@@ -76,13 +76,13 @@
                     prenom.style.backgroundColor='#FFFFFF';
                 }
 
-                if(regexAge.test(Age.value) == false){
+                if(regexAge.test(age.value) == false){
                     fieldsError += "\n - Age";
-                    Age.style.backgroundColor='#DF3F3F';
-                    Age.value = "";
+                    age.style.backgroundColor='#DF3F3F';
+                    age.value = "";
                 }
                 else{
-                    Age.style.backgroundColor='#FFFFFF';
+                    age.style.backgroundColor='#FFFFFF';
                 }
 
                 if(fieldsError == ""){

@@ -1,0 +1,48 @@
+#main_content {
+    margin-bottom: 15px;
+    padding: 10px;
+    width: 500px;
+    border-color: red;
+}
+
+legend {
+    padding: 0px 3px;
+    font-weight: bold;
+    font-variant: small-caps;
+}
+
+label {
+    display: flex;
+    margin: 6px;
+}
+
+input{
+    display:flex;
+}
+
+#validation_button{
+    margin-top: 15px;
+    margin-left: 75%;
+}
+
+form{
+    margin-top: 150px;
+    width: 20%;
+    margin: 0 auto;
+}
+
+h1{
+    text-align:center;
+}
+
+#body{
+    background-image: url(img/cadeau.jpg);
+}
+
+#body_succee{
+    background-image: url(img/confettis.jpg);
+}
+
+#div_succee{
+    margin-top: 15%;
+}
